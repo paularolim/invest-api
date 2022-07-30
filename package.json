@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chromium": "3.0.3",
     "puppeteer": "15.5.0"
+  },
+  "devDependencies": {
+    "puppeteer-core": "15.5.0"
   }
 }
