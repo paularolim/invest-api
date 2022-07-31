@@ -5,6 +5,10 @@ const { listFII } = require("../../scraping/list-fii");
 
 const router = express.Router();
 
+router.get("/", (req, res) => {
+  res.json({ success: true, version: "1.0.0" });
+});
+
 router.get("/funds", async (req, res) => {
   const result = await listFII();
   res.json(result);
