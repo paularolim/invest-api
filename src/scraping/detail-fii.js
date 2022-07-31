@@ -1,13 +1,9 @@
-const puppeteer = require("puppeteer-core");
+const { getPageAndBrower } = require("./config");
 
 const detailFII = async (ticker) => {
-  const browser = await puppeteer.launch({
-    // headless: false,
-    executablePath: "./node_modules/chromium/lib/chromium/chrome-linux/chrome",
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
-  const page = await browser.newPage();
-  await page.goto("https://www.fundsexplorer.com.br/funds/" + ticker);
+  const { page, browser } = await getPageAndBrower(
+    "https://www.fundsexplorer.com.br/funds/" + ticker
+  );
 
   const result = await page.evaluate(() => {
     const ticker =
