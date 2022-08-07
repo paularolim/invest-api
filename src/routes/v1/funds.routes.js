@@ -10,11 +10,13 @@ router.get("/", (req, res) => {
 });
 
 router.get("/funds", async (req, res) => {
+  console.log("searching all funds...");
   const result = await listFII();
   res.json(result);
 });
 
 router.get("/funds/:ticker", async (req, res) => {
+  console.log(`searching ${req.params.ticker} fund...`);
   const result = await detailFII(req.params.ticker);
   res.json(result);
 });
