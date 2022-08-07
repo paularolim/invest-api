@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer-core");
+const puppeteer = require("puppeteer");
 
 const getPageAndBrower = async (url) => {
   const browser = await puppeteer.launch({
